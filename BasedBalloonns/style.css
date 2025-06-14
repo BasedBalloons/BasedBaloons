@@ -1,0 +1,689 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Luckiest Guy', cursive;
+  background-color: #fdf5e6;
+  color: #2c2c2c;
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+}
+
+nav .logo {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.connect-btn {
+  background: #ffeb3b;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+.balloon-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  max-width: 260px;
+}
+
+.balloon-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+
+/* ==== HERO --- header SECTION ==== */
+.hero {
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  font-family: 'Luckiest Guy', cursive;
+  overflow: hidden;
+  background: url('images/backdrop.png') no-repeat center center;
+  background-size: cover;
+}
+
+
+.hero-content,
+.floating-balloons,
+.confetti {
+  position: relative;
+  z-index: 2;
+}
+
+
+@keyframes bgWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  flex-wrap: wrap;
+  padding: 10px 30px;
+}
+
+.nav .logo {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 5px #ff00cc, 0 0 15px #ff6600;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav a,
+.connect-btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: 0.3s;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav a:hover,
+.connect-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #fff000, 0 0 20px #ff0080;
+}
+
+.hero-content p {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mint-btn,
+.wl-btn {
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border-radius: 16px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  box-shadow: 0 0 10px #fff5, 0 0 20px #fff5;
+}
+
+
+.community {
+  background-image: url('images/backdrop.png');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: 'Luckiest Guy', cursive;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-top: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.community::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* darkens image for text contrast */
+  z-index: 1;
+}
+
+.community-overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.community h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.community p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-buttons a {
+  font-size: 1.2rem;
+  padding: 15px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.discord-btn:hover {
+  background: #7289da;
+  transform: scale(1.05);
+}
+
+.twitter-btn:hover {
+  background: #1da1f2;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+/* ==== Floating Balloons ==== */
+.floating-balloons::before,
+.floating-balloons::after {
+  content: '🎈🎈🎈';
+  position: absolute;
+  font-size: 2.5rem;
+  animation: floatBalloons 12s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+.floating-balloons::before {
+  left: 10%;
+  top: 100%;
+  animation-delay: 0s;
+}
+
+.floating-balloons::after {
+  left: 70%;
+  top: 100%;
+  animation-delay: 3s;
+}
+
+@keyframes floatBalloons {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-400px) rotate(20deg);
+  }
+  100% {
+    transform: translateY(-800px) rotate(-15deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/* ==== Confetti (simple sparkle effect) ==== */
+.confetti {
+  opacity: .03; /* Temporarily increase to test */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(#fff 1px, transparent 0),
+    radial-gradient(#ff0 1px, transparent 0),
+    radial-gradient(#f0f 1px, transparent 0),
+    radial-gradient(#0ff 1px, transparent 0);
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  animation: sparkle 100s linear infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    background-position: 0 0, 10px 10px, 20px 20px, 30px 30px;
+  }
+  100% {
+    background-position: 100px 100px, 110px 110px, 120px 120px, 130px 130px;
+  }
+}
+
+/* Other section styles truncated for brevity — include animations, hover states, grayscale-to-color transitions, etc. */
+
+
+/*this is the mint sectio */
+/* === Retro Mint Section === */
+.vintage-mint-section {
+  background: #fff7ea;
+  border: 6px double #000;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  font-family: 'Luckiest Guy', cursive;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px #000 inset;
+}
+
+/* === Title Styling === */
+.rubber-hose-title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #111;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff;
+  animation: bounceIn 1.6s ease;
+}
+
+/* === Info List === */
+.rubber-hose-list {
+  list-style: none;
+  font-size: 1.6rem;
+  color: #333;
+  padding: 0;
+  margin: 1.5rem auto;
+  animation: jitter 4s infinite;
+}
+
+/* === Mint Button === */
+.mint-now-btn {
+  background: #f64b9b;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 0.9rem 2.4rem;
+  border: 4px solid #000;
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  display: inline-block;
+  animation: jiggle 1.4s infinite;
+  box-shadow: 0 5px #000;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.mint-now-btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-emoji {
+  font-size: 1.4em;
+  animation: wobble 2s infinite ease-in-out;
+}
+
+/* === Decorative Graphics === */
+.vintage-deco img {
+  position: absolute;
+  z-index: 2;
+  width: 80px;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+.balloon {
+  top: 0;
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+.float-left {
+  left: 10%;
+}
+
+.float-right {
+  right: 10%;
+}
+
+.delay {
+  animation-delay: 3s;
+}
+
+.party-hat {
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: tilt 3s infinite;
+}
+
+.cake {
+  bottom: 0;
+  left: 15%;
+  animation: bounceIn 1.4s ease-in-out;
+}
+
+.icecream {
+  bottom: 0;
+  right: 15%;
+  animation: wobble 3s infinite;
+}
+
+.stars {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  opacity: 0.05;
+  animation: twinkle 5s linear infinite;
+}
+
+/* === Animations === */
+@keyframes bounceIn {
+  0% { transform: scale(0.2); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes jitter {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+@keyframes jiggle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes tilt {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(12deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+  100% { opacity: 0.05; }
+}
+
+/*this is the section for the header */
+/* === Retro Navbar === */
+.retro-nav {
+  background: radial-gradient(circle at top, #fceabb, #f8b500);
+  border-bottom: 6px double #222;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Luckiest Guy', cursive;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px #222;
+}
+
+/* === Logo === */
+.logo {
+  font-size: 2rem;
+  color: #222;
+  text-shadow: 2px 2px #fff;
+  letter-spacing: 1px;
+}
+
+/* === Marquee Text Effect === */
+.marquee-text {
+  animation: wiggleText 3s infinite ease-in-out;
+}
+
+@keyframes wiggleText {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1.5deg); }
+  75% { transform: rotate(-1.5deg); }
+}
+
+/* === Navigation Links === */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #222;
+  padding: 0.4rem 0.8rem;
+  background: #fff2d9;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 #000;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  background: #fdd35c;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* === Connect Button (Vintage Neon Style) === */
+.connect-btn {
+  background: #d62448;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 3px solid #000;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 10px #f52e5e, 0 0 20px #f52e5e;
+  cursor: pointer;
+  font-family: 'Luckiest Guy', cursive;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  animation: neon-pulse 1.6s infinite;
+}
+
+.radio-icon {
+  font-size: 1.3rem;
+  animation: wobbleRadio 2s infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px #f52e5e, 0 0 16px #f52e5e;
+  }
+  50% {
+    box-shadow: 0 0 20px #fff, 0 0 40px #f52e5e;
+  }
+}
+
+@keyframes wobbleRadio {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(10deg); }
+}
+
+
+
+
+
+
+.faq-section {
+  padding: 4rem 2rem;
+  background-color: #fff0e6;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ff5e57;
+}
+
+.faq-item {
+  max-width: 600px;
+  margin: 1rem auto;
+  background: white;
+  border: 2px dashed #ff8f77;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #3e3e3e;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+
+
+
+footer {
+  background-color: #222;
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+footer nav.footer-nav {
+  margin-top: 0.5rem;
+}
+
+footer nav.footer-nav a {
+  color: #ffeb3b;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: bold;
+}
+
+footer nav.footer-nav a:hover {
+  text-decoration: underline;
+}
+/* 🔊 Sliding Soundbar */
+#soundbar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  overflow: visible;
+  z-index: 999;
+}
+
+#soundbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 8px 12px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  transform: translateX(-80%);
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+#soundbar:hover {
+  transform: translateX(0%);
+}
+
+#soundbar img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+#volume-slider {
+  appearance: none;
+  width: 100px;
+  height: 6px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
+
+#volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
